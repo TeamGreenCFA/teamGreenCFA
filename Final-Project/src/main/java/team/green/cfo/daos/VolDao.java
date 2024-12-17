@@ -1,4 +1,6 @@
 package team.green.cfo.daos;
 
-public interface VolDao {
+import team.green.cfo.models.VolModel;
+
+public interface VolDao extends Dao<VolModel> {
 }
