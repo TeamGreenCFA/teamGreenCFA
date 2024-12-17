@@ -1,4 +1,4 @@
 package team.green.cfo.services;
 
-public interface VolService {
+public class BenServiceImpl {
 }
