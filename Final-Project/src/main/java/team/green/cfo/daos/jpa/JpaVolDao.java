@@ -1,4 +1,12 @@
 package team.green.cfo.daos.jpa;
 
-public class JpaVolDao {
+import team.green.cfo.daos.VolDao;
+import team.green.cfo.models.VolModel;
+
+public class JpaVolDao extends GenericJpaDao<VolModel> implements VolDao {
+
+
+    public JpaVolDao() {
+        super(VolModel.class);
+    }
 }
