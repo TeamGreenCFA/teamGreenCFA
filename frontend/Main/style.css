@@ -1,5 +1,4 @@
 * {
- 
 
     font-family: 'Gill Sans', sans-serif;
 }
@@ -24,7 +23,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 
 button {
     padding: 10px 20px;
@@ -64,9 +62,17 @@ button {
     box-sizing: border-box;
 }
 
+header {
+    padding-left: 3%;
+    padding-right: 3%;
+}
 
 .nav-pills {
     font-size: 20px;
+<<<<<<< HEAD
+=======
+    justify-content: center;
+>>>>>>> 2aa2ef72ccb4a51d1220060b446e511cd724189a
     align-items: center;
 }
 

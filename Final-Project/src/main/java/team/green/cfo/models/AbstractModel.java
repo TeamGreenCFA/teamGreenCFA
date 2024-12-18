@@ -1,9 +1,6 @@
 package team.green.cfo.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +18,7 @@ public abstract class AbstractModel implements Model{
 
     private String email;
 
-    private int phone;
+    private String phone;
 
     private int age;
 
@@ -29,6 +26,8 @@ public abstract class AbstractModel implements Model{
 
     private String descriptions;
 
+
+    @ElementCollection
     private List<String> services = new ArrayList<>();
 
 
@@ -72,11 +71,11 @@ public abstract class AbstractModel implements Model{
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
