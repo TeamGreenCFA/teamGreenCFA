@@ -1,11 +1,10 @@
 * {
  
-
     font-family: 'Gill Sans', sans-serif;
 }
 
 body {
-    background-image: url(fundoForm.jpg);
+    background-image: url(fundo3.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -24,7 +23,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 
 button {
     padding: 10px 20px;
@@ -64,9 +62,15 @@ button {
     box-sizing: border-box;
 }
 
+header {
+    padding-left: 3%;
+    padding-right: 3%;
+}
 
 .nav-pills {
     font-size: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover {
@@ -86,12 +90,16 @@ a {
 
 /* Custom Nav Pills color */
 .nav-pills .nav-link {
+    top:10px;
     color: #605678;
     /* Custom color for the nav links */
 }
-
-/* Custom Nav link hover */
-.nav-pills .nav-link.active {
-    background-color: #7EACB5;
-    /* Active link color */
+.container {
+    height: 100px;
+}
+nav {
+    position: sticky;
+    top: 20px;
+    z-index: 10; /* Ensure it stays on top of other elements */
+    padding: 10px; /* Adjust as needed */
 }

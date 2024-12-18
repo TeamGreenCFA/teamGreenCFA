@@ -12,6 +12,7 @@ public class BenModel extends AbstractModel implements Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Override
     public Integer getId() {
         return null;
@@ -21,4 +22,5 @@ public class BenModel extends AbstractModel implements Model {
     public void setId(Integer id) {
 
     }
+
 }
