@@ -27,10 +27,8 @@ public class BenModel extends AbstractModel implements Model {
     private String address;
 
     private String descriptions;
-
     @ElementCollection
     private List<String> services = new LinkedList<>();
-
 
     @Override
     public Integer getId() {
