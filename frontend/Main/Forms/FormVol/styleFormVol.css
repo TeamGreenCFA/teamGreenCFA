@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(fundo3.jpg);
+    background-image: url(fundoForm.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -64,9 +64,15 @@ button {
     box-sizing: border-box;
 }
 
+header {
+    padding-left: 3%;
+    padding-right: 3%;
+}
 
 .nav-pills {
     font-size: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 button:hover {
@@ -95,8 +101,7 @@ a {
 }
 nav {
     position: sticky;
-    align-items: ;
-
+    top: 20px;
     z-index: 10; /* Ensure it stays on top of other elements */
     padding: 10px; /* Adjust as needed */
 }
