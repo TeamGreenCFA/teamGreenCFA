@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(image4.jpg);
+    background-image: url(fundo3.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -95,7 +95,8 @@ a {
 }
 nav {
     position: sticky;
-    top: 20px;
+    align-items: ;
+
     z-index: 10; /* Ensure it stays on top of other elements */
     padding: 10px; /* Adjust as needed */
 }
