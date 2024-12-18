@@ -21,7 +21,7 @@ public abstract class AbstractModel implements Model{
 
     private String email;
 
-    private int phone;
+    private String phone;
 
     private int age;
 
@@ -72,11 +72,11 @@ public abstract class AbstractModel implements Model{
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

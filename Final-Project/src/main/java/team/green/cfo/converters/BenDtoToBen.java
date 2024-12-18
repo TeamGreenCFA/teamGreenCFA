@@ -12,4 +12,15 @@ public class BenDtoToBen implements Converter<BenDto, BenModel> {
     public void setBenService(BenService benService) {
         this.benService = benService;
     }
+
+    public BenModel convert(BenDto benDto) {
+        BenModel benModel = (benDto.getId() != null ? benService.get(benDto.getId()) : new BenModel());
+
+        benModel.setFirstName(benDto.getFirstName());
+        benModel.setLastName(benDto.getLastName());
+        benModel.setEmail(benDto.getEmail());
+        benModel.setPhone(benDto.getPhone());
+
+        return benModel;
+    }
 }
