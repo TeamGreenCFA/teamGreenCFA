@@ -25,10 +25,6 @@ public class BenDto {
     @Pattern(regexp = "^\\+?[0-9]*$", message = "Phone number contains invalid characters")
     @Size (min = 9, max = 16)
     private String phone;
-/*
-=======
->>>>>>> 2c25e5af196750b0a8b055fab5d310ec71869ee5
-*/
 
     public Integer getId() {
         return id;

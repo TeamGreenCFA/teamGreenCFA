@@ -1,13 +1,11 @@
 package team.green.cfo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 import team.green.cfo.command.VolDto;
@@ -20,21 +18,25 @@ import team.green.cfo.services.VolService;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@CrossOrigin
+@RestController
+@RequestMapping("")
 public class VolController {
 
     private VolService volService;
     private VolDtoToVol volDtoToVol;
     private VolToVolDto volToVolDto;
 
-    //@Autowired
+    @Autowired
     public void setVolService(VolService volService) {
         this.volService = volService;
     }
-    //@Autowired
+
+    @Autowired
     public void setVolDtoToVol(VolDtoToVol volDtoToVol) {
         this.volDtoToVol = volDtoToVol;
     }
+    @Autowired
     public void setBenToBenDto(BenToBenDto benToBenDto) {
         this.volToVolDto = volToVolDto;
     }
@@ -42,13 +44,12 @@ public class VolController {
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<VolDto>> listVols() {
 
-        List<VolDto> VolDtos = VolService.list().stream()
+        List<VolDto> VolDtos = volService.getVolList().stream()
                 .map(volModel -> volToVolDto.convert(volModel))
                 .collect(Collectors.toList());
 
         return new ResponseEntity<>(VolDtos, HttpStatus.OK);
     }
-
 
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
@@ -60,9 +61,8 @@ public class VolController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<>(VolToVolDto.convert(volModel), HttpStatus.OK);
+        return new ResponseEntity<>(volToVolDto.convert(volModel), HttpStatus.OK);
     }
-
 
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
@@ -72,7 +72,7 @@ public class VolController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        VolModel savedVol = volService.save(volDtoToVol.convert(volDto));
+        VolModel savedVol = volService.saveOrUpdate(volDtoToVol.convert(volDto));
 
         // get help from the framework building the path for the newly created resource
         UriComponents uriComponents = uriComponentsBuilder.path("/api/ben/" + savedVol.getId()).build();
@@ -98,30 +98,18 @@ public class VolController {
 
         volDto.setId(id);
 
-        volService.save(volDtoToVol.convert(volDto));
+        volService.saveOrUpdate(volDtoToVol.convert(volDto));
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
 
 
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity<VolDto> deleteVol(@PathVariable Integer id) {
 
-        try {
+        volService.deleteVon(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
-            volService.delete(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
-        } catch (AssociationExistsException e) {
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
-        } catch (VolNotFoundException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
     }
-
-
-
 
 }
