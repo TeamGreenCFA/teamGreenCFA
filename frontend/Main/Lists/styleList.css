@@ -1,10 +1,10 @@
 * {
- 
+
     font-family: 'Gill Sans', sans-serif;
 }
 
 body {
-    background-image: url(fundo3.jpg);
+    background-image: url(grocery5.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -71,6 +71,7 @@ header {
     font-size: 20px;
     justify-content: center;
     align-items: center;
+
 }
 
 button:hover {
@@ -90,16 +91,197 @@ a {
 
 /* Custom Nav Pills color */
 .nav-pills .nav-link {
-    top:10px;
+    top: 10px;
     color: #605678;
     /* Custom color for the nav links */
 }
+
 .container {
-    height: 100px;
+    align-items: center;
+    height: 300px;
+    width: 250px;
 }
+
 nav {
     position: sticky;
     top: 20px;
-    z-index: 10; /* Ensure it stays on top of other elements */
-    padding: 10px; /* Adjust as needed */
+    z-index: 10;
+    /* Ensure it stays on top of other elements */
+    padding: 10px;
+    /* Adjust as needed */
+}
+
+/* Importing Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  
+
+  background-image: url(grocery5.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  
+}
+.swiper-slide {
+  display: flex;              /* Use flexbox layout for .swiper-slide */
+  justify-content: center;    /* Center content horizontally */
+  align-items: center;        /* Center content vertically */
+  height: auto;               /* Allow height to adjust to content */
+  width: 100%;                /* Full width for each slide */
+  box-sizing: border-box;     /* Make sure padding doesn't break the layout */
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;     /* Stack the child elements vertically */
+  justify-content: space-between; /* Distribute space between the elements */
+  height: 100%;               /* Stretch to fill the swiper slide height */
+  width: 250px;               /* Fixed width for the card */
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  user-select: none;
+  box-sizing: border-box;     /* Include padding in the height/width calculation */
+}
+
+.card-list .card-item {
+  height:auto;
+  color: #fff;
+  user-select: none;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.card-list  .user-image {
+  width: 150px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+  border: 3px solid #fff;
+  padding: 4px;
+}
+
+.card-list .card-item .user-profession {
+  font-size: 1.15rem;
+  color: #e3e3e3;
+  font-weight: 500;
+  margin: 14px 0 40px;
+}
+
+.card-item .message-button {
+  font-size: 1.25rem;
+  padding: 10px 35px;
+  color: #030728;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.card-item .message-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+  background: #fff;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+.slider-wrapper .swiper-slide-button {
+  color: #fff;
+  margin-top: -55px;
+  transition: 0.2s ease;
+}
+.slider-wrapper .swiper-slide-button:hover {
+  color: #4658ff;
+}
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+}
+
+/* Ensure .swiper-slide is flexible and not limiting height */
+.swiper-slide {
+  display: flex;              /* Use flexbox layout for .swiper-slide */
+  justify-content: center;    /* Center content horizontally */
+  align-items: center;        /* Center content vertically */
+  height: auto;               /* Allow height to adjust to content */
+  width: 100%;                /* Full width for each slide */
+  box-sizing: border-box;     /* Make sure padding doesn't break the layout */
+}
+
+/* Ensure .card-item fills the swiper slide */
+.card-item {
+  display: flex;
+  flex-direction: column;     /* Stack the child elements vertically */
+  justify-content: space-between; /* Distribute space between the elements */
+  min-height: auto;
+  width: 250px;               /* Fixed width for the card */
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  user-select: none;
+  box-sizing: border-box;     /* Include padding in the height/width calculation */
+}
+
+/* You can adjust the image size if needed */
+.card-list .user-image {
+  width: 120px;      /* Image size */
+  height: 120px;     /* Round image */
+  border-radius: 50%;
+  margin-bottom: 20px; /* Adjust spacing below image */
+  border: 3px solid #fff;
+  padding: 4px;
+}
+
+.card-item .message-button {
+  font-size: 1.25rem;
+  padding: 10px 35px;
+  color: #030728;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.card-item .message-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
 }

@@ -5,10 +5,12 @@
 }
 
 body {
-    background-image: url(fundoForm.jpg);
+    background-image: url(tools.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center top;
+    background-position: 50%;
 }
 
 .container-app {
@@ -33,7 +35,7 @@ button {
     height: auto;
     border-radius: 50px;
     /* Round the corners of the button */
-    border: none;
+        border: none;
     /* Remove default border */
     background-color: #605678;
     color: white;
