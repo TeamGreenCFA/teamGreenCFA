@@ -2,7 +2,7 @@ package team.green.cfo.command;
 
 public class BenDto {
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     private Integer id;
 
     /*@NotNull*/ (message = "First name is mandatory")

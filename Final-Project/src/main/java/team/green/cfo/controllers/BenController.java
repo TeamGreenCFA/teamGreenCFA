@@ -1,5 +1,11 @@
 package team.green.cfo.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import team.green.cfo.command.BenDto;
 import team.green.cfo.converters.BenDtoToBen;
 import team.green.cfo.converters.BenToBenDto;
 import team.green.cfo.services.BenService;
@@ -26,16 +32,16 @@ public class BenController {
         this.benToBenDto = benToBenDto;
     }
 
-    /*@RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<BenDto>> listBens() {
 
         List<BenDto> BenDtos = BenService.list().stream()
-                .map(customer -> customerToCustomerDto.convert(customer))
+                .map(customer -> benToBenDto.convert(benModel))
                 .collect(Collectors.toList());
 
         return new ResponseEntity<>(BenDtos, HttpStatus.OK);
 
-     */
+
 
     /*@RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<BenDto> showBen(@PathVariable Integer id) {
@@ -91,7 +97,7 @@ public class BenController {
      */
 
 
-    /*@RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity<BenDto> deleteBen(@PathVariable Integer id) {
 
         try {
@@ -107,7 +113,7 @@ public class BenController {
         }
     }
 
-     */
+
 
 
 }

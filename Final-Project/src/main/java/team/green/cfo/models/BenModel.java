@@ -20,7 +20,7 @@ public class BenModel extends AbstractModel implements Model {
 
     private String email;
 
-    private int phone;
+    private String phone;
 
     private int age;
 
@@ -71,12 +71,12 @@ public class BenModel extends AbstractModel implements Model {
     }
 
     @Override
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
     @Override
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
