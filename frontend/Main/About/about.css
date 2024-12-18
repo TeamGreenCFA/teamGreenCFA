@@ -4,10 +4,11 @@
 }
 
 body {
-    background-image: url(image4.jpg);
+    background-image: url(imagecut.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    right: 80%;
 }
 
 .container-app {
@@ -15,12 +16,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 20px;
+    gap: 0px;
     /* Add space between buttons */
     position: absolute;
     top: 650px;
     /* You can adjust this value to position the content in percentage */
-    left: 50%;
+    
     transform: translate(-50%, -50%);
 }
 
@@ -46,11 +47,11 @@ button {
     justify-content: center;
     align-items: center;
     height: 3px;
-    text-align: center;
+    text-align: justify;
     max-width: 50%;
     /* Adjust the width percentage */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: px;
     position: relative;
     font-size: 15px;
     color: #605678;
@@ -62,6 +63,8 @@ button {
     /* Adjusts for actual centering */
     box-sizing: border-box;
 }
+
+
 
 header {
     padding-left: 3%;
