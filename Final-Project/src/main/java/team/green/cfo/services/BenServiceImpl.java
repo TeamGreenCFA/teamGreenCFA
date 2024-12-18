@@ -30,12 +30,6 @@ public class BenServiceImpl implements BenService {
         return benDao.findAll();
     }
 
-
-    @Override
-    public void createBenAccount() {
-
-    }
-
     @Override
     public BenModel saveOrUpdate(BenModel benModel) {
         return benDao.saveOrUpdate(benModel);

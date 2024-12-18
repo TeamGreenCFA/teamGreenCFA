@@ -39,7 +39,7 @@ public abstract class AbstractModel implements Model{
         this.descriptions = descriptions;
     }
 
-    public List getServices() {
+    public List<String> getServices() {
         return services;
     }
 

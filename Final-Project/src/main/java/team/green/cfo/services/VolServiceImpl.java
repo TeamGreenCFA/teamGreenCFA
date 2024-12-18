@@ -32,16 +32,6 @@ public class VolServiceImpl implements VolService {
     }
 
     @Override
-    public void createVolAccount(Integer id, VolModel volModel) {
-
-
-
-        return;
-
-    }
-
-
-    @Override
     public VolModel saveOrUpdate(VolModel volModel) {
         return volDao.saveOrUpdate(volModel);
     }

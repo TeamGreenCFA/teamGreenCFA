@@ -10,8 +10,6 @@ public interface VolService {
 
     VolModel get(Integer id);
 
-    void createVolAccount(Integer id, VolModel volModel);
-
     VolModel saveOrUpdate(VolModel volModel);
 
     void deleteVon(Integer id);

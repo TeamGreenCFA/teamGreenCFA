@@ -10,8 +10,6 @@ public interface BenService {
 
     BenModel get(Integer id);
 
-    void createBenAccount();
-
     BenModel saveOrUpdate(BenModel benModel);
 
     void deleteBen(Integer id);
