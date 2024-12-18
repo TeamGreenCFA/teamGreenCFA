@@ -2,15 +2,19 @@ package team.green.cfo.services;
 
 import team.green.cfo.models.BenModel;
 
+import java.util.List;
+
 public interface BenService {
 
-    void createRequest();
+    List<BenModel> getBenList();
 
-    void getVolList();
+    BenModel get(Integer id);
 
-    void getBenList();
-    BenModel get(int id);
+    void createBenAccount();
 
+    BenModel saveOrUpdate(BenModel benModel);
+
+    void deleteBen(Integer id);
 
 
 }

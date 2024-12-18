@@ -1,9 +1,6 @@
 package team.green.cfo.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +26,8 @@ public abstract class AbstractModel implements Model{
 
     private String descriptions;
 
+
+    @ElementCollection
     private List<String> services = new ArrayList<>();
 
 
