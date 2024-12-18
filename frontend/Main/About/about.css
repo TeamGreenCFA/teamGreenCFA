@@ -40,22 +40,23 @@ button {
     transition: background-color 0.3s ease;
 }
 
-.content p {
+.content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 3px;
     text-align: center;
     max-width: 50%;
     /* Adjust the width percentage */
     padding: 20px;
     border-radius: 8px;
-    position: absolute;
-    font-size: 20px;
-    color: white;
+    position: relative;
+    font-size: 15px;
+    color: #605678;
     top: 300px;
     /* Adjust this value to position the content in percentage */
-    left: 50%;
+    left: 70%;
     /* Centers horizontally */
     transform: translateX(-50%);
     /* Adjusts for actual centering */
