@@ -67,6 +67,7 @@ button {
 
 .nav-pills {
     font-size: 20px;
+    align-items: center;
 }
 
 button:hover {
@@ -91,11 +92,22 @@ a {
     /* Custom color for the nav links */
 }
 .container {
-    height: 100px;
+    height: 200px;
+    padding-left: 200px;
+    padding-right: 20px;
 }
 nav {
     position: sticky;
-    top: 20px;
     z-index: 10; /* Ensure it stays on top of other elements */
-    padding: 10px; /* Adjust as needed */
+
+}
+
+header {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.row g-3{
+    display: flex;
+    position: absolute;
+    
 }
