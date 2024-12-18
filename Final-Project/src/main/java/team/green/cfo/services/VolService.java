@@ -1,15 +1,20 @@
 package team.green.cfo.services;
 
-import team.green.cfo.models.BenModel;
 import team.green.cfo.models.VolModel;
+
+import java.util.List;
 
 public interface VolService {
 
-    void createRequest();
+    List<VolModel> getVolList();
 
-    void getVolList();
+    VolModel get(Integer id);
 
-    void getBenList();
-    VolModel get(int id);
+    void createVolAccount(Integer id, VolModel volModel);
+
+    VolModel saveOrUpdate(VolModel volModel);
+
+    void deleteVon(Integer id);
+
 
 }
