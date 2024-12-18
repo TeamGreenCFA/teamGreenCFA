@@ -1,4 +1,6 @@
 package team.green.cfo.daos;
 
-public interface BenDao {
+import team.green.cfo.models.BenModel;
+
+public interface BenDao extends Dao<BenModel> {
 }
