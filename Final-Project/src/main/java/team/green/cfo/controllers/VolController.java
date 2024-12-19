@@ -18,9 +18,9 @@ import team.green.cfo.services.VolService;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
-@CrossOrigin
+
 @RestController
-@RequestMapping("")
+@RequestMapping("/api/vol")
 public class VolController {
 
     private VolService volService;
@@ -37,7 +37,7 @@ public class VolController {
         this.volDtoToVol = volDtoToVol;
     }
     @Autowired
-    public void setBenToBenDto(BenToBenDto benToBenDto) {
+    public void setVolToVolDto(VolToVolDto volToVolDto) {
         this.volToVolDto = volToVolDto;
     }
 
@@ -68,20 +68,19 @@ public class VolController {
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public ResponseEntity<?> addVol(@Valid @RequestBody VolDto volDto, BindingResult bindingResult, UriComponentsBuilder uriComponentsBuilder) {
 
-        if (bindingResult.hasErrors() || volDto.getId() != null) {
+       if (bindingResult.hasErrors() || volDto.getId() != null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        VolModel savedVol = volService.saveOrUpdate(volDtoToVol.convert(volDto));
 
-        // get help from the framework building the path for the newly created resource
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/ben/" + savedVol.getId()).build();
 
-        // set headers with the created path
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(uriComponents.toUri());
+        volService.saveOrUpdate(volDtoToVol.convert(volDto));
 
-        return new ResponseEntity<>(headers, HttpStatus.CREATED);
+
+
+
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 

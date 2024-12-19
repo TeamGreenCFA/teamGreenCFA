@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "Volunteer")
+@Table(name = "volunteer")
 public class VolModel extends AbstractModel implements Model {
 
     @Id
@@ -15,7 +15,7 @@ public class VolModel extends AbstractModel implements Model {
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
     }
 
     @Override

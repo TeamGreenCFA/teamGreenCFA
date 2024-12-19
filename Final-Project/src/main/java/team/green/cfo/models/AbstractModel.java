@@ -26,10 +26,15 @@ public abstract class AbstractModel implements Model{
 
     private String descriptions;
 
+    private String services;
 
-    @ElementCollection
-    private List<String> services = new ArrayList<>();
+    public String getServices() {
+        return services;
+    }
 
+    public void setServices(String services) {
+        this.services = services;
+    }
 
     public String getDescriptions() {
         return descriptions;
@@ -37,14 +42,6 @@ public abstract class AbstractModel implements Model{
 
     public void setDescriptions(String descriptions) {
         this.descriptions = descriptions;
-    }
-
-    public List<String> getServices() {
-        return services;
-    }
-
-    public void setServices(List<String> services) {
-        this.services = services;
     }
 
     public String getFirstName() {

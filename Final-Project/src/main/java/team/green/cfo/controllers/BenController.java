@@ -18,8 +18,8 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@CrossOrigin
-@RequestMapping("")
+@RestController
+@RequestMapping("/api/ben")
 public class BenController {
     private BenService benService;
     private BenDtoToBen benDtoToBen;
@@ -72,16 +72,9 @@ public class BenController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        BenModel savedBen = benService.saveOrUpdate(benDtoToBen.convert(benDto));
+        benService.saveOrUpdate(benDtoToBen.convert(benDto));
 
-        // get help from the framework building the path for the newly created resource
-        UriComponents uriComponents = uriComponentsBuilder.path("/api/ben/" + savedBen.getId()).build();
-
-        // set headers with the created path
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(uriComponents.toUri());
-
-        return new ResponseEntity<>(headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 

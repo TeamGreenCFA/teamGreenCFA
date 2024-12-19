@@ -1,5 +1,6 @@
 package team.green.cfo.daos;
 
+import org.springframework.transaction.annotation.Transactional;
 import team.green.cfo.models.Model;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public interface Dao<T extends Model> {
      * @param modelObject the model to be saved or updated
      * @return the saved or updated model
      */
+
     T saveOrUpdate(T modelObject);
 
     /**
