@@ -1,6 +1,8 @@
 * {
     font-family: 'Gill Sans', sans-serif;
-    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -24,25 +26,8 @@ body {
     transform: translate(-50%, -50%);
 }
 
-button {
-    padding: 10px 20px;
-    /* Adjust the button's size */
-    width:300px;
-    height: 60px;
-    border-radius: 50px;
-    /* Round the corners of the button */
-    border: none;
-    /* Remove default border */
-    background-color: #605678;
-    color: rgb(223, 221, 187);
-    cursor: pointer;
-    font-size: 26px !important;
-}
-
 .content p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     height: 350px;
     text-align: center;
     max-width: 50%;
@@ -57,8 +42,7 @@ button {
     left: 50%;
     /* Centers horizontally */
     transform: translateX(-50%);
-    /* Adjusts for actual centering */
-    box-sizing: border-box;
+ 
 }
 
 header {
@@ -78,11 +62,62 @@ header {
     color: #605678;
     /* Custom color for the nav links */
 }
-.container {
-    height: 100px;
-}
+
 nav {
     top: 20px;
     z-index: 10; /* Ensure it stays on top of other elements */
     padding: 10px; /* Adjust as needed */
+}
+
+/* Container principal para os itens */
+.container {
+    display: flex; /* Utiliza flexbox para alinhar imagem e texto lado a lado */
+    align-items: center; /* Alinha verticalmente os itens */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    padding: 20px;
+    margin-top: 50px;
+    max-width: 1000px; /* Largura máxima do container */
+    width: 100%; /* A largura pode ocupar toda a tela, mas até o limite de max-width */
+  
+}
+
+/* Estilo para a imagem (quadrado) */
+.image-box {
+    width: 200px; /* Define o tamanho do quadrado */
+    height: 200px;
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o limite */
+}
+.about{
+    padding: 40px;
+}
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
+}
+
+/* Estilo para o texto (retângulo) */
+.text-box {
+    flex: 1; /* Faz o retângulo preencher o espaço restante */
+    padding: 35px;
+    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo para o retângulo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de profundidade */
+}
+
+.text-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+.text-box p {
+    font-size: 22px;
+    color: #333;
+}
+
+/* Responsividade - altera layout em telas pequenas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        gap: 20px;
+    }
 }
