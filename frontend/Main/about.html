@@ -1,37 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HelpHub</title>
-    <link rel="stylesheet" href="./aboutstyle.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>HelpHub</title>
+  <link rel="stylesheet" href="./aboutstyle.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Reset global styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-image: url(fundo3.jpg);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      color: #333;
+      font-size: 16px;
+    }
+
+    /* Header remains intact */
+    header {
+      padding-left: 3%;
+      padding-right: 3%;
+    }
+
+    .nav-pills {
+      font-size: 18px;
+      justify-content: center;
+      align-items: center;
+      padding-top: 10px;
+    }
+
+    .nav-pills .nav-link {
+      color: #605678;
+      transition: all 0.3s ease;
+    }
+
+    .nav-pills .nav-link:hover {
+      background-color: #605678;
+      color: white;
+    }
+
+    /* Content Styling */
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.85); /* Lighter background */
+      max-width: 80%;
+      box-sizing: border-box;
+      border-radius: 6px; /* Subtle rounding */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for light depth */
+    }
+
+    .content h2 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+      max-width: 800px;
+      text-align: justify;
+    }
+
+    .content p span {
+      color: #4a3d67;
+      font-weight: bold;
+    }
+
+    /* Button Styling */
+    button {
+      padding: 12px 30px;
+      width: 220px;
+      height: 50px;
+      border-radius: 25px;
+      border: none;
+      background-color: #4a3d67;
+      color: rgb(223, 221, 187);
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #3b2d4e;
+      transform: translateY(-3px);
+    }
+
+    /* Logo Styling */
+    .logo {
+      height: 50px;
+      width: auto;
+    }
+
+    /* Navigation Styling */
+    nav {
+      top: 20px;
+      z-index: 10;
+      padding: 10px;
+    }
+
+    /* For smaller screens */
+    @media (max-width: 768px) {
+      .content {
+        padding: 30px;
+        max-width: 90%;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      button {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+
+    /* Add some light shadow to text */
+    .content h2, .content p {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
-<nav>
+
+<body>
+
+  <nav>
     <div class="container">
       <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top">
-        <svg class="bi me-2" width="40" height="78"><use xlink:href="#bootstrap"/></svg>
-        <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <a href="../index.html"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <span class="help">
-              <img src="help.png" alt="HelpHub Logo" class="logo">
+            <img src="help.png" alt="HelpHub Logo" class="logo">
           </span>
-      </a>
-      
+        </a>
 
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="Lists/listvols.html" class="nav-link">Helpers</a></li>
-        <li class="nav-item"><a href="Lists/listbens.html" class="nav-link">Helpees</a></li>
-        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-      </ul>
-    </header>
-</div>
-</nav>
-<body>
-     
+        <ul class="nav nav-pills">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="Lists/listvols.html" class="nav-link">Helpers</a></li>
+          <li class="nav-item"><a href="Lists/listbens.html" class="nav-link">Helpees</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </header>
+    </div>
+  </nav>
+
+  <div class="content">
+    <p>We exist to help… and be helped</p>
+    <h2>About HelpHub</h2>
+    <p>"At HelpHub, we bring out the best in ourselves to stand against inequality and strengthen the bonds within
+      our communities. We believe everyone has a voice and deserves support when they need it most." <span>- Founder</span></p>
+
+    <p>"At HelpHub, every service we offer is inspired by the people we meet—whether it’s providing social support,
+      helping with home maintenance, or sharing a smile on a rainy afternoon. Together, we’re building a brighter
+      future, one small act of kindness at a time."</p>
+
+    <p>"Since our foundation, we’ve touched the lives of over 10,000 people through outreach and support, thanks to
+      our dedicated volunteers driven by a desire to act and make a difference. Each story of impact fuels our
+      passion to reach even more people in need.
+      We believe collaboration is the key to overcoming life’s biggest challenges. At HelpHub, we’re the bridge
+      connecting those who need support with those who want to create change. Our mission is to ensure everyone
+      feels valued, supported, and empowered.
+      Join us and be part of a story that’s changing lives—one connection at a time."</p>
+
+  
+  </div>
+
 </body>
+
 </html>

@@ -38,7 +38,7 @@ public class BenController {
     public void setBenToBenDto(BenToBenDto benToBenDto) {
         this.benToBenDto = benToBenDto;
     }
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<BenDto>> listBens() {
 
@@ -50,7 +50,7 @@ public class BenController {
 
     }
 
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<BenDto> showBen(@PathVariable Integer id) {
 

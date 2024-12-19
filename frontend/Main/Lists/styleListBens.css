@@ -16,7 +16,8 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: top center;
-  padding-top: 20px; /* Reduzido para menos espaço no topo */
+  padding-top: 20px;
+  /* Reduzido para menos espaço no topo */
 }
 
 nav {
@@ -44,53 +45,104 @@ header {
   color: white;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o contêiner dos botões */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  /* Espaçamento entre os botões */
+}
+
+.filter-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  color: #030728;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
+}
+
 /* Estilo do contêiner de deslize */
 .container-swipe {
-  width: 100%; /* Ajuste a largura para 100% para garantir que se ajuste ao tamanho da tela */
-  max-width: 1200px; /* Limite de largura para que não ocupe a tela inteira em telas grandes */
+  width: 100%;
+  /* Ajuste a largura para 100% para garantir que se ajuste ao tamanho da tela */
+  max-width: 1200px;
+  /* Limite de largura para que não ocupe a tela inteira em telas grandes */
   align-items: center;
-  margin-top: 10px; /* Subir o container mais para cima */
-  margin-bottom: 10px; /* Espaçamento inferior para evitar que o conteúdo fique muito perto do fim */
-  overflow: visible; /* Evita que os cards fiquem cortados */
-  position: relative; /* Ajusta a posição para que o top e outros valores funcionem bem */
+  margin-top: 10px;
+  /* Subir o container mais para cima */
+  margin-bottom: 10px;
+  /* Espaçamento inferior para evitar que o conteúdo fique muito perto do fim */
+  overflow: visible;
+  /* Evita que os cards fiquem cortados */
+  position: relative;
+  /* Ajusta a posição para que o top e outros valores funcionem bem */
 }
 
 /* Estilo para os cards do swiper */
 .slider-wrapper {
-  display: flex; /* Exibe os cards na horizontal */
-  gap: 15px; /* Espaçamento entre os cards */
-  max-width: 100%; /* Limita a largura máxima */
+  display: flex;
+  /* Exibe os cards na horizontal */
+  gap: 15px;
+  /* Espaçamento entre os cards */
+  max-width: 100%;
+  /* Limita a largura máxima */
   margin: 0 70px 100px;
   color: #fff;
-  margin-top: 0; /* Ajuste para garantir que o conteúdo não fique cortado */
+  margin-top: 0;
+  /* Ajuste para garantir que o conteúdo não fique cortado */
   transition: 0.2s ease;
-  justify-content: flex-start; /* Alinha os cards à esquerda */
+  justify-content: flex-start;
+  /* Alinha os cards à esquerda */
   overflow: hidden;
 }
 
 /* Estilo das card-items */
 .card-list .card-item {
-  width: 300px; /* Largura fixa para os cards */
-  height: 450px; /* Altura fixa para garantir o layout */
+  width: 300px;
+  /* Largura fixa para os cards */
+  height: 450px;
+  /* Altura fixa para garantir o layout */
   border-radius: 3%;
-  margin-bottom: 40px; /* Espaço entre os cards */
+  margin-bottom: 40px;
+  /* Espaço entre os cards */
   border: 2px solid #fff;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* Distribui o conteúdo de forma uniforme */
+  justify-content: space-between;
+  /* Distribui o conteúdo de forma uniforme */
   padding: 20px;
   border-radius: 10px;
   backdrop-filter: blur(30px);
   background: rgba(255, 255, 255, 0.2);
   text-align: center;
-  box-sizing: border-box; /* Evita que o conteúdo transborde */
+  box-sizing: border-box;
+  /* Evita que o conteúdo transborde */
 }
 
-.card-list{
+.card-list {}
 
-}
 /* Estilo para as imagens de usuário */
 .user-image {
   width: 150px;
@@ -139,7 +191,8 @@ header {
 }
 
 /* Estilo da navegação do swiper */
-.swiper-button-prev, .swiper-button-next {
+.swiper-button-prev,
+.swiper-button-next {
   color: white !important;
 }
 

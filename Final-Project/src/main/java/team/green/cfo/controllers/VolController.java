@@ -40,7 +40,7 @@ public class VolController {
     public void setVolToVolDto(VolToVolDto volToVolDto) {
         this.volToVolDto = volToVolDto;
     }
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<VolDto>> listVols() {
 
@@ -51,7 +51,7 @@ public class VolController {
         return new ResponseEntity<>(VolDtos, HttpStatus.OK);
     }
 
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<VolDto> showVol(@PathVariable Integer id) {
 
