@@ -64,7 +64,7 @@ public class BenController {
     }
 
 
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public ResponseEntity<?> addBen(@Valid @RequestBody BenDto benDto, BindingResult bindingResult, UriComponentsBuilder uriComponentsBuilder) {
 
@@ -77,7 +77,7 @@ public class BenController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     public ResponseEntity<BenDto> editBen(@Valid @RequestBody BenDto benDto, BindingResult bindingResult, @PathVariable Integer id) {
 
@@ -97,7 +97,7 @@ public class BenController {
 
 
 
-
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity<BenDto> deleteBen(@PathVariable Integer id) {
 

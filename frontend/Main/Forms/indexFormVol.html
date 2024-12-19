@@ -50,12 +50,20 @@
                     </div>
                     <div class="col-5">
                         <label for="inputAge" class="form-label">Age</label>
-                        <input type="number" class="form-control" id="inputAge" placeholder="Enter your age" required>
+                        <input type="number" class="form-control" id="inputAge" 
+                               placeholder="Enter your age" 
+                               min="18" max="120" 
+                               title="Age must be between 18 and 120" 
+                               required>
                     </div>
+                    
                     <div class="col-6">
                         <label for="inputPhone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="inputPhone" placeholder="Enter your phone number"
-                            required>
+                        <input type="text" class="form-control" id="inputPhone" 
+                               placeholder="Enter your phone number"
+                               pattern="\d{8,10}" 
+                               title="Phone number must be between 8 and 10 digits" 
+                               required>
                     </div>
                     <div class="col-6">
                         <label for="inputEmail" class="form-label">Email</label>
@@ -78,14 +86,7 @@
                             <option>Caring</option>
                         </select>
                     </div>
-                    <div class="mb-3 col-md-4">
-                        <input class="form-check-input" type="checkbox" id="inputDisabled">
-                        <label class="form-check-label" for="inputDisabled">Disabled</label>
-                    </div>
-                    <div class="mb-3 col-md-5">
-                        <input class="form-check-input" type="checkbox" id="inputElder">
-                        <label class="form-check-label" for="inputElder">Elder</label>
-                    </div>
+                    
                     <div class="mb-3">
                         <label for="inputDescription" class="form-label">Description</label>
                         <textarea class="form-control" id="inputDescription" rows="3"
@@ -107,31 +108,27 @@
         document.getElementById("userForm").onsubmit = async function (event) {
             event.preventDefault();
 
-            const firstName = document.getElementById("inputFirstName").value;
-            const lastName = document.getElementById("inputLastName").value;
-            const age = document.getElementById("inputAge").value;
-            const phone = document.getElementById("inputPhone").value;
-            const email = document.getElementById("inputEmail").value;
-            const address = document.getElementById("inputAddress").value;
-            const service = document.getElementById("inputService").value;
-            const disabled = document.getElementById("inputDisabled").checked;
-            const elder = document.getElementById("inputElder").checked;
-            const description = document.getElementById("inputDescription").value;
+            const firstNameCus = document.getElementById("inputFirstName").value;
+            const lastNameCus = document.getElementById("inputLastName").value;
+            const ageCus = document.getElementById("inputAge").value;
+            const phoneCus = document.getElementById("inputPhone").value;
+            const emailCus = document.getElementById("inputEmail").value;
+            const addressCus = document.getElementById("inputAddress").value;
+            const serviceCus = document.getElementById("inputService").value;
+            const descriptionCus = document.getElementById("inputDescription").value;
 
             let data = {
-                firstName,
-                lastName,
-                age,
-                phone,
-                email,
-                address,
-                service,
-                disabled,
-                elder,
-                description,
+                firstName: firstNameCus,
+                lastName: lastNameCus,
+                age: ageCus,
+                phone:addressCus,
+                email: emailCus,
+                address: addressCus,
+                services: serviceCus,
+                descriptions: descriptionCus
             };
 
-            const url = "http://localhost:8080/finalProject/api/ben";
+            const url = "http://localhost:8080/finalProject/api/vol";
             try {
                 const response = await fetch(url, {
                     method: "POST",
