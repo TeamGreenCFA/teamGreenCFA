@@ -1,238 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HelpHub</title>
+    <link rel="stylesheet" href="./styleFormVol.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <style>
-        /* Seus estilos aqui (sem mudanças) */
-        body {
-            background-image: url(tools.jpg);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center top;
-            background-position: 50%;
-        }
-
-        .form-container {
-            background-color: #1d0c73;
-            border-radius: 100px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            max-width: 600px;
-            width: 100%;
-            margin: 80px 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-container .form-label {
-            font-weight: bold;
-            color: #343a40;
-            margin-bottom: 5px;
-        }
-
-        .form-container input,
-        .form-container textarea {
-            border-radius: 5px;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            font-size: 14px;
-        }
-
-        .form-container input:focus,
-        .form-container textarea:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        .form-container button {
-            background-color: #007bff;
-            border: none;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-
-        .form-container button:active {
-            background-color: #004085;
-        }
-
-        .form-container textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .nav-pills .nav-link {
-            top: 10px;
-            color: #605678;
-            font-size: 24px;
-            justify-content: center;
-            align-items: center;
-            /* Custom color for the nav links */
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-        }
-
-        header .help img {
-            height: 40px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
-        }
-
-        .card-body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            text-align: center;
-            max-width: 50%;
-            padding: 20px;
-            border-radius: 8px;
-            position: absolute;
-            font-size: 15px;
-            color: #605678;
-            top: 300px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-sizing: border-box;
-        }
-
-        button.btn.btn-primary {
-            background-color: #605678;
-            border: none;
-            color: white;
-            border-radius: 50px;
-            padding: 10px 20px;
-            font-size: 20px;
-            cursor: pointer;
-            width: 250px;
-            transition: background-color 0.3s ease;
-        }
-
-        button.btn.btn-primary:hover {
-            background-color: #4e4662;
-        }
-
-        button.btn.btn-primary:active {
-            background-color: #3d364d;
-        }
-
-        ::placeholder {
-            color: #605678 !important;
-            opacity: 1 !important;
-        }
-
-        #inputService option {
-            color: #605678 !important;
-            background-color: #ffffff;
-        }
-
-        #inputService option:checked {
-            color: #605678 !important;
-            background-color: #605678;
-        }
-
-        nav {
-            position: sticky;
-            top: 20px;
-            z-index: 10;
-            /* Ensure it stays on top of other elements */
-            padding: 10px;
-            /* Adjust as needed */
-        }
-
-        @media (max-width: 768px) {
-            .form-container {
-                padding: 20px;
-                margin: 20px;
-            }
-
-            .form-container .mb-3 {
-                margin-bottom: 1rem;
-            }
-
-            .form-container button {
-                font-size: 14px;
-            }
-
-            .form-container input,
-            .form-container textarea {
-                font-size: 14px;
-            }
-
-            nav {
-                padding: 10px 20px;
-            }
-
-            nav .container {
-                padding: 0;
-            }
-
-            nav a {
-                font-size: 14px;
-                margin-left: 15px;
-            }
-
-            .form-group {
-                width: 100%;
-            }
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="indexFormVol.js"></script>
 </head>
+<nav>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top">
+        <svg class="bi me-2" width="40" height="78"><use xlink:href="#bootstrap"/></svg>
+        <a href="../index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <span class="help">
+              <img src="help.png" alt="HelpHub Logo" class="logo">
+          </span>
+      </a>
 
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="../Lists/listvols.html" class="nav-link">Helpers</a></li>
+        <li class="nav-item"><a href="../Lists/listbens.html" class="nav-link">Helpees</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+    </header>
 <body>
-    <nav>
-        <div class="container">
-            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top">
-                <svg class="bi me-2" width="40" height="78">
-                    <use xlink:href="#bootstrap" />
-                </svg>
-                <a href="../index.html"
-                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <span class="help">
-                        <img src="help.png" alt="HelpHub Logo" class="logo">
-                    </span>
-                </a>
-
-
-                <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="../Lists/listvols.html" class="nav-link">Helpers</a></li>
-                    <li class="nav-item"><a href="../Lists/listbens.html" class="nav-link">Helpees</a></li>
-                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                </ul>
-            </header>
-        </div>
-    </nav>
+    
 
     <div class="form d-flex justify-content-center align-items-center">
         <div class="card w-75 mb-3">
@@ -249,11 +48,11 @@
                         <input type="text" class="form-control" id="inputLastName" placeholder="Enter your last name"
                             required>
                     </div>
-                    <div class="col-3">
+                    <div class="col-5">
                         <label for="inputAge" class="form-label">Age</label>
                         <input type="number" class="form-control" id="inputAge" placeholder="Enter your age" required>
                     </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <label for="inputPhone" class="form-label">Phone</label>
                         <input type="tel" class="form-control" id="inputPhone" placeholder="Enter your phone number"
                             required>
@@ -268,7 +67,7 @@
                         <input type="text" class="form-control" id="inputAddress" placeholder="Enter your address"
                             required>
                     </div>
-                    <div class="col-10">
+                    <div class="col-12">
                         <label for="inputService" class="form-label">Service</label>
                         <select id="inputService" class="form-select" required>
                             <option selected disabled>Choose the main service that you can help someone</option>

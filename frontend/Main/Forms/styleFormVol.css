@@ -1,0 +1,243 @@
+* {
+    font-family: 'Gill Sans', sans-serif;
+}
+
+body {
+    background-image: url(tools.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    background-position: 50%;
+}
+
+.container-app {
+    color: #605678;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    /* Add space between buttons */
+    position: absolute;
+    top: 650px;
+    /* You can adjust this value to position the content in percentage */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+header {
+    padding-left: 3%;
+    padding-right: 3%;
+    border: none;
+}
+
+.nav-pills {
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #7b82ca;
+    /* Darker background color on hover */
+}
+
+button:focus {
+    outline: none;
+    /* Removes focus outline */
+}
+
+a {
+    text-decoration: none;
+    /* Remove underline from links */
+}
+
+/* Custom Nav Pills color */
+.nav-pills .nav-link {
+    top:10px;
+    color: #605678;
+    /* Custom color for the nav links */
+}
+.container {
+    height: 100px;
+}
+nav {
+    position: relative;
+    top: 20px;
+    z-index: 10; /* Ensure it stays on top of other elements */
+    padding: 10px; /* Adjust as needed */
+    border: none;
+}
+
+.form-container {
+    border-radius: 100px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    margin: 100px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container .form-label {
+    font-weight: bold;
+    color: #343a40;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-container input,
+.form-container textarea {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.form-container button {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form{
+    
+}
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+.form-container button:active {
+    background-color: #004085;
+}
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+    
+}
+
+.nav-pills .nav-link {
+    top: 10px;
+    color: #605678;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    /* Custom color for the nav links */
+}
+
+#userForm{
+    border: none;
+    margin-top: 80px;
+    padding: 20px;
+    width: 600px;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.card.w-75.mb-3{
+    border: none;
+}
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    text-align: left;
+    max-width: 50%;
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute;
+    font-size: 15px;
+    color: #605678;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+}
+
+button.btn.btn-primary {
+    background-color: #605678;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 250px;
+    transition: background-color 0.3s ease;
+}
+
+button.btn.btn-primary:hover {
+    background-color: #4e4662;
+}
+
+button.btn.btn-primary:active {
+    background-color: #3d364d;
+}
+
+::placeholder {
+    color: #605678 !important;
+    opacity: 1 !important;
+}
+
+#inputService option {
+    color: #605678 !important;
+    background-color: #ffffff;
+}
+
+#inputService option:checked {
+    color: #605678 !important;
+    background-color: #605678;
+}
+
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .form-container .mb-3 {
+        margin-bottom: 1rem;
+    }
+
+    .form-container button {
+        font-size: 14px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav .container {
+        padding: 0;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}

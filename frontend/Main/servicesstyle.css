@@ -36,7 +36,10 @@ nav {
     z-index: 10; /* Ensure it stays on top of other elements */
     padding: 10px; /* Adjust as needed */
 }
-
+.title{
+  margin-left: 260px;
+  color: white;
+}
 article {
     --img-scale: 1.001;
     --title-color: black;
@@ -136,7 +139,7 @@ article {
   }
   
   .articles {
-    margin-top: 50px;
+    margin-top: 30px;
     display: grid;
     max-width: 1200px;
     margin-inline: auto;
