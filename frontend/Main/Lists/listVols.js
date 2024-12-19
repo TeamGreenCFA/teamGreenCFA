@@ -1,5 +1,6 @@
 window.onload = function () {
 	const swiper = new Swiper('.slider-wrapper', {
+        spaceBetween: 15, // Espaçamento entre os cards
         loop: true,
         grabCursor: true,
         spaceBetween: 30,
@@ -12,6 +13,10 @@ window.onload = function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        pagination: {
+            el: '.swiper-pagination', // Paginação
+            clickable: true
+          },
         breakpoints: {
             0: {
                 slidesPerView: 1
