@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HelpHub</title>
     <link rel="stylesheet" href="./styleListBens.css" />
-    <!-- Usar a versão mais recente do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -16,8 +14,317 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
+<style>
+ /* Reset de margens e paddings */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    background-image: url(houseplants.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+    padding-top: 150px;
+    height: 100%;
+    /* Reduzido para menos espaço no topo */
+}
+
+nav {
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+    padding: 10px;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.nav-pills {
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Personalizando as cores dos links da nav */
+.nav-pills .nav-link {
+    top: 10px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o contêiner dos botões */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    /* Espaçamento entre os botões */
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    color: #030728;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/* Estilo do contêiner de deslize */
+.container-swipe {
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    /* Esconde o conteúdo que ultrapassa o contêiner */
+    position: relative;
+    display: flex;
+    margin-right: 500px;
+    align-items: center;
+}
+/* Estilo para o wrapper dos cards (lista) */
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* Adicione a transição aqui */
+    color: #fff;
+    margin-top: 0;
+    overflow: visible;
+    justify-content: flex-start;
+}
+
+/* Estilo das card-items */
+.card-list .card-item,
+.card-item {
+    width: 250px;
+    /* Largura reduzida */
+    height: 400px;
+    /* Altura reduzida */
+    border-radius: 3%;
+    margin-bottom: 40px;
+    margin-right: 15px;
+    /* Espaçamento entre os cards */
+    border: 2px solid #fff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    /* Evita que os cards encolham */
+}
+/* Estilo para as imagens de usuário */
+.user-image {
+    width: 120px;
+    /* Imagem menor */
+    height: 120px;
+    /* Imagem menor */
+    border-radius: 50%;
+    margin-bottom: 15px;
+    /* Espaçamento ajustado */
+    border: 3px solid #fff;
+    padding: 4px;
+}
+
+/* Estilo das informações (nome do serviço, usuário e descrição) */
+.service {
+    font-size: 24px;
+    /* Fonte menor */
+    margin-bottom: 8px;
+    /* Espaçamento ajustado */
+}
+
+.user-name {
+    font-size: 18px;
+    /* Fonte menor */
+    margin-bottom: 8px;
+    /* Espaçamento ajustado */
+}
+
+.description {
+    font-size: 16px;
+    /* Fonte menor */
+    margin-bottom: 15px;
+    /* Espaçamento ajustado */
+}
+/* Estilo para o container dos botões "Map" e "Contact" */
+.button-container-card {
+    display: flex;
+    /* Define o container como flex */
+    justify-content: space-around;
+    /* Distribui o espaço entre os botões */
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Estilo dos botões */
+.message-button,
+.contact-button {
+    width: 48%;
+    padding: 8px 0;
+    /* Espaçamento ajustado */
+    font-size: 14px;
+    /* Fonte menor */
+    text-align: center;
+    color: #030728;
+    border-radius: 0;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+    margin: 0;
+    /* Remove margins */
+}
+
+/* Efeito hover no botão */
+.message-button:hover,
+.contact-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    z-index: 1;
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    /* Take the full width of its parent */
+}
+
+.map-card-item {
+    width: 250px;
+    /* Largura fixa para os cards */
+    height: 250px;
+    /* Altura fixa para garantir o layout */
+    border-radius: 3%;
+    margin-bottom: 40px;
+    /* Espaço entre os cards */
+    border: 2px solid #fff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* Distribui o conteúdo de forma uniforme */
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    /* Evita que o conteúdo transborde */
+}
+/* Estilo para o card flutuante do mapa */
+.floating-map-card {
+    position: fixed;
+    bottom: 20px;
+    right: -500px;
+    /* Começa fora da tela */
+    width: 400px;
+    /* Largura do card */
+    height: 500px;
+    /* Altura do card */
+    background: rgba(255, 255, 255, 0.9);
+    /* Fundo com transparência */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.5s ease;
+    /* Animação para mostrar o card */
+    z-index: 1000;
+}
+
+.floating-map-card.show {
+    right: 20px; /* Move para a tela */
+}
+.floating-map-card .map-container {
+    width: 100%;
+    height: 400px; /* Ajuste para a altura dentro do card */
+    margin-bottom: 10px;
+}
+/* Estilo para o botão de fechar o mapa */
+.close-map-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+}
+</style>
 </head>
 <nav>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top">
@@ -44,63 +351,43 @@
 </nav>
 
 <body>
-    <!-- Certifique-se de carregar o CSS do Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
     <div class="container">
         <div class="button-container">
             <button class="filter-button" data-filter="Cooking">Cooking</button>
             <button class="filter-button" data-filter="Maintenance">Maintenance</button>
             <button class="filter-button" data-filter="Transport">Transport</button>
-            <button class="filter-button" data-filter="Help with shopping">Help with shopping</button>
+            <button class="filter-button" data-filter="Shopping help">Shopping Help</button>
             <button class="filter-button" data-filter="Caring">Caring</button>
         </div>
         <div class="container-swipe swiper">
-            <div class="slider-wrapper">
-                <div id="cards" class="card-list swiper-wrapper">
-                    <!-- Os cards serão carregados aqui dinamicamente -->
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+            <div id="cards" class="card-list swiper-wrapper">
+                <!-- Os cards serão carregados aqui dinamicamente -->
             </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
-
+        <div class="floating-map-card" id="floating-map-card">
+         <button class="close-map-button" onclick="closeMap()">×</button>
+         <div id="map" class="map-container"></div>
+    </div>
     <script>
+        let allBens = [];
+        const cardsWrapper = document.getElementById("cards");
+        let swiper;
+        let currentMapId = null;
+          const serviceImages = {
+            "Cooking": "servicesImages/closecooking.jpg",
+            "Maintenance": "servicesImages/closemaintenance.jpg",
+            "Transport": "servicesImages/transport.jpg",
+            "Shopping help": "servicesImages/shopping-cart.jpg",
+            "Caring": "servicesImages/closecaring.jpg"
+            
+        };
+
         window.onload = function () {
-
-            // Inicializa o Swiper
-            const swiper = new Swiper('.slider-wrapper', {
-                spaceBetween: 15, // Espaçamento entre os cards
-                loop: true,
-                grabCursor: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    dynamicBullets: true
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                breakpoints: {
-                    0: {
-                        slidesPerView: 1
-                    },
-                    768: {
-                        slidesPerView: 2
-                    },
-                    1024: {
-                        slidesPerView: 3
-                    }
-                }
-            });
-
-            // Chama a função para carregar os dados após a inicialização do Swiper
             resetList();
-
-            // Adiciona event listeners aos botões de filtro
             const filterButtons = document.querySelectorAll('.filter-button');
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
@@ -110,52 +397,61 @@
             });
         }
 
-        let allBens = []; // Variável para armazenar todos os bens
+         function getServiceImage(serviceType) {
+            return serviceImages[serviceType] || serviceImages.default;
+        }
 
         function resetList() {
-
             const API_URL = "http://localhost:8080/finalProject/api/ben";
             fetch(API_URL)
                 .then((response) => response.json())
                 .then((bens) => {
                     allBens = bens; // Armazena todos os bens
                     populateTable(bens);
+                    initSwiper();
                 })
                 .catch((error) => {
                     console.error("Erro ao carregar dados:", error);
                 });
         }
 
-        function populateTable(bens) {
+         function populateTable(bens) {
             const cards = document.getElementById("cards");
             cards.innerHTML = ""; // Limpa os cards antes de adicionar novos
             bens.forEach((ben) => {
                 // Cria o HTML para cada item da lista de bens e adiciona o `data-ben-id` com o `ben.id`
+                 const imagePath = getServiceImage(ben.services);
                 const cardHTML = `
                     <div class="card-item swiper-slide" data-ben-id="${ben.id}">
-                        <img src="servicesImages/shopping-cart.jpg" alt="User Image" class="user-image">
+                        <img src="${imagePath}" alt="User Image" class="user-image">
                         <h3 class="service">${ben.services}</h3>
                         <p class="user-name">${ben.firstName + " " + ben.lastName}</p>
-                        <p class="description">${ben.description}</p>
-                        <button class="message-button">Message</button>
+                        <p class="description">${ben.descriptions}</p>
+                        <div class="button-container-card">
+                            <button class="message-button map-button">Map</button>
+                            <button class="contact-button">Contact</button>
+                        </div>
                     </div>
                 `;
                 cards.innerHTML += cardHTML; // Adiciona o card ao container
             });
 
-            // Delegação de eventos para o botão "Message"
-            cards.addEventListener('click', function (event) {
-                // Verifica se o botão clicado é o botão "Message"
-                if (event.target && event.target.classList.contains('message-button')) {
-                    const cardItem = event.target.closest('.card-item'); // Encontrar o item de card que foi clicado
-                    const benId = cardItem.dataset.benId; // Obtém o ID do "ben" do card
-
-                    // Encontre o bem correspondente a partir do ID
-                    const ben = bens.find(b => b.id == benId);
-
+            // Delegação de eventos para o botão "Map"
+            cardsWrapper.addEventListener('click', function (event) {
+                if (event.target && event.target.classList.contains('map-button')) {
+                    const cardItem = event.target.closest('.card-item');
+                    const benId = cardItem.dataset.benId;
+                    const ben = allBens.find(b => b.id == benId);
+                     if (ben) {
+                        showMap(ben);
+                     }
+                }
+                if (event.target && event.target.classList.contains("contact-button")) {
+                    const cardItem = event.target.closest(".card-item");
+                    const benId = cardItem.dataset.benId;
+                    const ben = allBens.find((b) => b.id == benId);
                     if (ben) {
-                        // Exibe o alerta com as informações do bem
-                        alert(`${ben.firstName + " " + ben.lastName}:\n\nPhone Number: ${ben.phone}\nAddress: ${ben.address}\nDescription: ${ben.description}`);
+                        showContactInfo(ben);
                     }
                 }
             });
@@ -164,8 +460,124 @@
         function filterList(filter) {
             const filteredBens = allBens.filter(ben => ben.services === filter);
             populateTable(filteredBens);
+            initSwiper();
+        }
+        function initSwiper() {
+            if (swiper) {
+                swiper.destroy(true, true);
+            }
+            swiper = new Swiper('.container-swipe.swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                loop: false,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                }
+            });
+        }
+        let mapsApiPromise = null;
+
+        function loadGoogleMapsAPI() {
+            if (mapsApiPromise) {
+                return mapsApiPromise;
+            }
+            mapsApiPromise = new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                const map = document.createElement('map');
+                script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyC-9u6fShAlbITdTBfm0LrAZUdwphF5P_g`;
+                script.async = true;
+                script.defer = true;
+                script.onerror = (err) => {
+                    reject(err);
+                };
+                script.onload = () => {
+                    resolve(google.maps);
+                }
+                document.body.appendChild(script);
+            });
+            return mapsApiPromise
+        }
+
+        async function showMap(ben) {
+                const floatingMapCard = document.getElementById('floating-map-card');
+                floatingMapCard.classList.add('show');
+
+            try {
+                const maps = await loadGoogleMapsAPI();
+                const address = ben.address;
+                const geocoder = new maps.Geocoder();
+
+                const results = await new Promise((resolve, reject) => {
+                    geocoder.geocode({ address: address }, (results, status) => {
+                        if (status === "OK") {
+                            resolve(results);
+                        } else {
+                            reject(status);
+                        }
+                    });
+                });
+
+                if (results && results.length > 0) {
+                    const latitude = results[0].geometry.location.lat();
+                    const longitude = results[0].geometry.location.lng();
+
+                    const mapContainer = document.getElementById(`map`);
+
+
+                    const map = new maps.Map(mapContainer, {
+                        center: { lat: latitude, lng: longitude },
+                        zoom: 15,
+                    });
+                     new maps.Marker({
+                        position: { lat: latitude, lng: longitude },
+                        map: map,
+                    });
+                } else {
+                    alert(`Não foi possível encontrar o mapa para o endereço fornecido: ${address}, erro no results do geocoding`);
+                }
+            } catch (error) {
+                if (error instanceof Error) {
+                    console.error("error loading google maps: ", error);
+                    alert("An error has occurred while loading google maps please try again later");
+                } else {
+                    console.error("Geocoding error:", error);
+                    let errorMessage = `Não foi possível encontrar o mapa para o endereço fornecido: ${address}. `;
+                    switch (error) {
+                        case "ZERO_RESULTS":
+                            errorMessage += "Não foi encontrado nenhum resultado para o endereço fornecido.";
+                            break;
+                        case "OVER_QUERY_LIMIT":
+                            errorMessage += "O limite de requisições do geocoding foi alcançado. Tente novamente mais tarde.";
+                            break;
+                        case "REQUEST_DENIED":
+                            errorMessage += "Sua requisição de geocoding foi negada. Verifique a chave da api.";
+                            break;
+                        case "INVALID_REQUEST":
+                            errorMessage += "A requisição de geocoding está inválida.";
+                            break;
+                        case "UNKNOWN_ERROR":
+                            errorMessage += "Ocorreu um erro desconhecido com o serviço de geocoding. Tente novamente mais tarde.";
+                            break;
+                        default:
+                            errorMessage += "Erro desconhecido.";
+                    }
+                    alert(errorMessage);
+                }
+            }
+        }
+          function closeMap() {
+            const floatingMapCard = document.getElementById('floating-map-card');
+             floatingMapCard.classList.remove('show');
+        }
+
+          function showContactInfo(ben) {
+            alert(`Name: ${ben.firstName} ${ben.lastName}\nPhone: ${ben.phone}\nAddress: ${ben.address}\nEmail: ${ben.email}`);
         }
     </script>
 </body>
-
 </html>
