@@ -1,3 +1,4 @@
+/* Reset e font family */
 * {
     font-family: 'Gill Sans', sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* Background */
 body {
     background-image: url(fundo3.jpg);
     background-repeat: no-repeat;
@@ -12,44 +14,26 @@ body {
     background-size: cover;
 }
 
+/* Centralização dos itens na tela */
 .container-app {
     color: #605678;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 80px;
-    /* Add space between buttons */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 80px; /* Espaçamento entre os botões */
     position: absolute;
     top: 700px;
-    /* You can adjust this value to position the content in percentage */
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.content p {
-
-    height: 350px;
-    text-align: center;
-    max-width: 50%;
-    /* Adjust the width percentage */
-    padding: 20px;
-    border-radius: 8px;
-    position: absolute;
-    font-size: 24px;
-    color: white;
-    top: 300px;
-    /* Adjust this value to position the content in percentage */
-    left: 50%;
-    /* Centers horizontally */
-    transform: translateX(-50%);
- 
-}
-
+/* Estilo do header */
 header {
     padding-left: 3%;
     padding-right: 3%;
 }
 
+/* Estilos da navegação */
 .nav-pills {
     font-size: 24px;
     justify-content: center;
@@ -58,50 +42,68 @@ header {
 
 /* Custom Nav Pills color */
 .nav-pills .nav-link {
-    top:10px;
     color: #605678;
-    /* Custom color for the nav links */
 }
 
 nav {
     top: 20px;
-    z-index: 10; /* Ensure it stays on top of other elements */
-    padding: 10px; /* Adjust as needed */
+    z-index: 10; /* Garante que a navegação esteja sobre os outros elementos */
+    padding: 10px;
 }
 
-/* Container principal para os itens */
+/* Centralização da .container */
 .container {
-    display: flex; /* Utiliza flexbox para alinhar imagem e texto lado a lado */
-    align-items: center; /* Alinha verticalmente os itens */
+    display: flex; /* Flexbox */
+    flex-direction: row; /* Alinha itens lado a lado */
+    justify-content: center; /* Centraliza os itens no eixo horizontal */
+    align-items: center; /* Centraliza no eixo vertical */
     gap: 20px; /* Espaçamento entre a imagem e o texto */
     padding: 20px;
-    margin-top: 50px;
-    max-width: 1000px; /* Largura máxima do container */
-    width: 100%; /* A largura pode ocupar toda a tela, mas até o limite de max-width */
-  
+    margin-top: 150px; /* Espaço de afastamento do topo */
+    width: 100%;
+}
+
+/* Estilo para a .container-about */
+.container-about {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Organiza as divs na vertical */
+    justify-content: center; /* Centraliza no eixo vertical */
+    align-items: center; /* Centraliza no eixo horizontal */
+    gap: 20px;
+    width: 100%;
+}
+
+/* Estilo para a .container-founder */
+.container-founder {
+    display: flex; /* Flexbox */
+    flex-direction: row; /* Itens lado a lado */
+    align-items: center; /* Alinha itens no centro vertical */
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    padding: 20px;
+    margin-top: 150px;
+    width: 100%;
 }
 
 /* Estilo para a imagem (quadrado) */
 .image-box {
-    width: 200px; /* Define o tamanho do quadrado */
+    width: 200px;
     height: 200px;
-    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o limite */
+    overflow: hidden;
 }
-.about{
-    padding: 40px;
-}
+
 .image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Garante que a imagem preencha o quadrado sem distorcer */
 }
 
-/* Estilo para o texto (retângulo) */
+/* Estilo para a caixa de texto */
 .text-box {
     flex: 1; /* Faz o retângulo preencher o espaço restante */
     padding: 35px;
-    background-color: rgba(255, 255, 255, 0.5); /* Cor de fundo para o retângulo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito de profundidade */
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo semitransparente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+    border-radius: 10px; /* Cantos arredondados */
 }
 
 .text-box h2 {
@@ -109,15 +111,46 @@ nav {
     font-size: 1.6rem;
 }
 
-.text-box p {
-    font-size: 22px;
-    color: #333;
-}
-
-/* Responsividade - altera layout em telas pequenas */
+/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        flex-direction: column; /* Organiza itens na vertical */
         gap: 20px;
+    }
+}
+
+/* Estilos da caixa de texto .about (não deve ser absolute) */
+.text-box.about {
+    background-color: rgba(255, 255, 255, 0.7); /* Fundo semitransparente para legibilidade */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin-top: 20px; /* Espaço após o conteúdo anterior */
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center;
+}
+
+/* Ajuste no layout para a caixa de texto ficar bem posicionada sobre a imagem */
+.container-about .text-box.about {
+    margin-top: 0; /* Remove qualquer margem indesejada */
+}
+
+/* Estilos para a segunda .text-box (que será mais estreita) */
+.text-box.text-box-narrow {
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-top: 20px;
+    width: 70%; /* Torna a div mais estreita */
+    max-width: 800px; /* Largura máxima da caixa */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza a caixa */
+}
+
+/* Responsividade: caixa de texto estreita em telas menores */
+@media (max-width: 768px) {
+    .text-box.text-box-narrow {
+        width: 90%; /* Em telas menores, torna a caixa de texto mais estreita */
+        max-width: 600px; /* Largura máxima para telas menores */
     }
 }

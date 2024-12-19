@@ -152,6 +152,15 @@ header {
   top: 200px;
 }
 .title{
-  margin-left: 260px;
+  position: absolute;  /* Permite que o h1 fique posicionado em relação ao body */
+  top: 0;              /* Posiciona o h1 no topo */
+  left: 20%;           /* Coloca o h1 no centro horizontalmente */
+  padding: 20px;       /* Ajuste o padding conforme necessário */
+  z-index: 10;         /* Garante que o h1 fique sobre outros elementos */
   color: white;
+  font-size: 33px;
+  text-align: left;
+  margin-top: 100px;
+  transform: translateX(-50%)
 }
+
