@@ -15,15 +15,51 @@ public class VolDto {
             @Size (min = 3, max = 23)
     private String lastName;
 
-
     @Email
     @NotBlank(message = "Email is mandatory")
     private String email;
 
-
-    @Pattern(regexp = "^\\+?[0-9]*$", message = "Phone number contains invalid characters")
-            @Size(min = 9, max = 16)
     private String phone;
+
+    private String address;
+
+    private String descriptions;
+
+    private String services;
+
+    public int age;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDescriptions() {
+        return descriptions;
+    }
+
+    public void setDescriptions(String descriptions) {
+        this.descriptions = descriptions;
+    }
+
+    public String getServices() {
+        return services;
+    }
+
+    public void setServices(String services) {
+        this.services = services;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public Integer getId() {
         return id;

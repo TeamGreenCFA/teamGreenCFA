@@ -1,6 +1,7 @@
 package team.green.cfo.daos.jpa;
 
 
+import org.springframework.transaction.annotation.Transactional;
 import team.green.cfo.daos.Dao;
 import team.green.cfo.models.Model;
 
@@ -15,7 +16,7 @@ public class GenericJpaDao<T extends Model> implements Dao<T> {
     protected Class<T> modelType;
 
     @PersistenceContext
-    protected EntityManager em;
+    public EntityManager em;
 
 
     public GenericJpaDao(Class<T> modelType) {

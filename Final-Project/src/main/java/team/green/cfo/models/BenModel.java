@@ -15,7 +15,7 @@ public class BenModel extends AbstractModel implements Model {
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
     }
 
     @Override
