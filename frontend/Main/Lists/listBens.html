@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HelpHub</title>
-    <link rel="stylesheet" href="./styleListBens.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -16,315 +15,364 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<style>
- /* Reset de margens e paddings */
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', sans-serif;
-}
+    <style>
+        /* Reset de margens e paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', sans-serif;
+        }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 250px;
-    background-image: url(houseplants.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: top center;
-    padding-top: 150px;
-    height: 100%;
-    /* Reduzido para menos espaço no topo */
-}
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            background-image: url(houseplants.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: top center;
+            padding-top: 150px;
+            height: 100%;
+            /* Reduzido para menos espaço no topo */
+        }
 
-nav {
-    position: sticky;
-    top: 20px;
-    z-index: 10;
-    padding: 10px;
-}
+        nav {
+            position: sticky;
+            top: 20px;
+            z-index: 10;
+            padding: 10px;
+        }
 
-/* Estilo para o cabeçalho */
-header {
-    padding-left: 3%;
-    padding-right: 3%;
-}
+        /* Estilo para o cabeçalho */
+        header {
+            padding-left: 3%;
+            padding-right: 3%;
+        }
 
-.nav-pills {
-    font-size: 24px;
-    justify-content: center;
-    align-items: center;
-}
+        .nav-pills {
+            font-size: 24px;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Personalizando as cores dos links da nav */
-.nav-pills .nav-link {
-    top: 10px;
-    color: white;
-}
+        /* Personalizando as cores dos links da nav */
+        .nav-pills .nav-link {
+            top: 10px;
+            color: white;
+        }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-/* Estilo para o contêiner dos botões */
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    gap: 10px;
-    /* Espaçamento entre os botões */
-}
+        /* Estilo para o contêiner dos botões */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+            /* Espaçamento entre os botões */
+            flex-wrap: wrap;
+            /* Allow buttons to wrap on small screens */
+        }
 
-.filter-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    background-color: #fff;
-    border: 1px solid transparent;
-    color: #030728;
-    cursor: pointer;
-    transition: 0.2s ease;
-}
+        .filter-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            color: #030728;
+            cursor: pointer;
+            transition: 0.2s ease;
+            margin-bottom: 5px;
+            /* Add margin between buttons */
 
-.filter-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #fff;
-    color: #fff;
-}
+        }
 
-/* Estilo do contêiner de deslize */
-.container-swipe {
-    width: 100%;
-    max-width: 1200px;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    /* Esconde o conteúdo que ultrapassa o contêiner */
-    position: relative;
-    display: flex;
-    margin-right: 500px;
-    align-items: center;
-}
-/* Estilo para o wrapper dos cards (lista) */
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.5s ease;
-    /* Adicione a transição aqui */
-    color: #fff;
-    margin-top: 0;
-    overflow: visible;
-    justify-content: flex-start;
-}
+        .filter-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #fff;
+            color: #fff;
+        }
 
-/* Estilo das card-items */
-.card-list .card-item,
-.card-item {
-    width: 250px;
-    /* Largura reduzida */
-    height: 400px;
-    /* Altura reduzida */
-    border-radius: 3%;
-    margin-bottom: 40px;
-    margin-right: 15px;
-    /* Espaçamento entre os cards */
-    border: 2px solid #fff;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-    background: rgba(255, 255, 255, 0.2);
-    text-align: center;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    /* Evita que os cards encolham */
-}
-/* Estilo para as imagens de usuário */
-.user-image {
-    width: 120px;
-    /* Imagem menor */
-    height: 120px;
-    /* Imagem menor */
-    border-radius: 50%;
-    margin-bottom: 15px;
-    /* Espaçamento ajustado */
-    border: 3px solid #fff;
-    padding: 4px;
-}
+        /* Estilo do contêiner de deslize */
+        .container-swipe {
+            width: 100%;
+            max-width: 1200px;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            /* Esconde o conteúdo que ultrapassa o contêiner */
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-/* Estilo das informações (nome do serviço, usuário e descrição) */
-.service {
-    font-size: 24px;
-    /* Fonte menor */
-    margin-bottom: 8px;
-    /* Espaçamento ajustado */
-}
+        /* Estilo para o wrapper dos cards (lista) */
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            /* Adicione a transição aqui */
+            color: #fff;
+            margin-top: 0;
+            overflow: visible;
+            justify-content: flex-start;
+        }
 
-.user-name {
-    font-size: 18px;
-    /* Fonte menor */
-    margin-bottom: 8px;
-    /* Espaçamento ajustado */
-}
+        /* Estilo das card-items */
+        .card-list .card-item,
+        .card-item {
+            width: 250px;
+            /* Largura reduzida */
+            height: 400px;
+            /* Altura reduzida */
+            border-radius: 3%;
+            margin-bottom: 40px;
+            margin-right: 15px;
+            /* Espaçamento entre os cards */
+            border: 2px solid #fff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            /* Evita que os cards encolham */
+        }
 
-.description {
-    font-size: 16px;
-    /* Fonte menor */
-    margin-bottom: 15px;
-    /* Espaçamento ajustado */
-}
-/* Estilo para o container dos botões "Map" e "Contact" */
-.button-container-card {
-    display: flex;
-    /* Define o container como flex */
-    justify-content: space-around;
-    /* Distribui o espaço entre os botões */
-    width: 100%;
-    margin-top: 10px;
-}
+        /* Estilo para as imagens de usuário */
+        .user-image {
+            width: 120px;
+            /* Imagem menor */
+            height: 120px;
+            /* Imagem menor */
+            border-radius: 50%;
+            margin-bottom: 15px;
+            /* Espaçamento ajustado */
+            border: 3px solid #fff;
+            padding: 4px;
+        }
 
-/* Estilo dos botões */
-.message-button,
-.contact-button {
-    width: 48%;
-    padding: 8px 0;
-    /* Espaçamento ajustado */
-    font-size: 14px;
-    /* Fonte menor */
-    text-align: center;
-    color: #030728;
-    border-radius: 0;
-    cursor: pointer;
-    background: #fff;
-    border: 1px solid transparent;
-    transition: 0.2s ease;
-    margin: 0;
-    /* Remove margins */
-}
+        /* Estilo das informações (nome do serviço, usuário e descrição) */
+        .service {
+            font-size: 24px;
+            /* Fonte menor */
+            margin-bottom: 8px;
+            /* Espaçamento ajustado */
+        }
 
-/* Efeito hover no botão */
-.message-button:hover,
-.contact-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #fff;
-    color: #fff;
-}
+        .user-name {
+            font-size: 18px;
+            /* Fonte menor */
+            margin-bottom: 8px;
+            /* Espaçamento ajustado */
+        }
 
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-    z-index: 1;
-    transition: 0.3s ease;
-}
+        .description {
+            font-size: 16px;
+            /* Fonte menor */
+            margin-bottom: 15px;
+            /* Espaçamento ajustado */
+        }
 
-.nav-button:hover {
-    color: rgba(255, 255, 255, 0.5);
-}
+        /* Estilo para o container dos botões "Map" e "Contact" */
+        .button-container-card {
+            display: flex;
+            /* Define o container como flex */
+            justify-content: space-around;
+            /* Distribui o espaço entre os botões */
+            width: 100%;
+            margin-top: 10px;
+        }
 
-.prev-button {
-    left: 10px;
-}
+        /* Estilo dos botões */
+        .message-button,
+        .contact-button {
+            width: 48%;
+            padding: 8px 0;
+            /* Espaçamento ajustado */
+            font-size: 14px;
+            /* Fonte menor */
+            text-align: center;
+            color: #030728;
+            border-radius: 0;
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid transparent;
+            transition: 0.2s ease;
+            margin: 0;
+            /* Remove margins */
+        }
 
-.next-button {
-    right: 10px;
-}
+        /* Efeito hover no botão */
+        .message-button:hover,
+        .contact-button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #fff;
+            color: #fff;
+        }
 
-.map-container {
-    width: 100%;
-    height: 300px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-}
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            z-index: 1;
+            transition: 0.3s ease;
+        }
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    /* Take the full width of its parent */
-}
+        .nav-button:hover {
+            color: rgba(255, 255, 255, 0.5);
+        }
 
-.map-card-item {
-    width: 250px;
-    /* Largura fixa para os cards */
-    height: 250px;
-    /* Altura fixa para garantir o layout */
-    border-radius: 3%;
-    margin-bottom: 40px;
-    /* Espaço entre os cards */
-    border: 2px solid #fff;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    /* Distribui o conteúdo de forma uniforme */
-    padding: 20px;
-    border-radius: 10px;
-    backdrop-filter: blur(30px);
-    background: rgba(255, 255, 255, 0.2);
-    text-align: center;
-    box-sizing: border-box;
-    /* Evita que o conteúdo transborde */
-}
-/* Estilo para o card flutuante do mapa */
-.floating-map-card {
-    position: fixed;
-    bottom: 20px;
-    right: -500px;
-    /* Começa fora da tela */
-    width: 400px;
-    /* Largura do card */
-    height: 500px;
-    /* Altura do card */
-    background: rgba(255, 255, 255, 0.9);
-    /* Fundo com transparência */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    transition: right 0.5s ease;
-    /* Animação para mostrar o card */
-    z-index: 1000;
-}
+        .prev-button {
+            left: 10px;
+        }
 
-.floating-map-card.show {
-    right: 20px; /* Move para a tela */
-}
-.floating-map-card .map-container {
-    width: 100%;
-    height: 400px; /* Ajuste para a altura dentro do card */
-    margin-bottom: 10px;
-}
-/* Estilo para o botão de fechar o mapa */
-.close-map-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #333;
-}
-</style>
+        .next-button {
+            right: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            /* Take the full width of its parent */
+        }
+
+        .map-card-item {
+            width: 250px;
+            /* Largura fixa para os cards */
+            height: 250px;
+            /* Altura fixa para garantir o layout */
+            border-radius: 3%;
+            margin-bottom: 40px;
+            /* Espaço entre os cards */
+            border: 2px solid #fff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            /* Distribui o conteúdo de forma uniforme */
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(30px);
+            background: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-sizing: border-box;
+            /* Evita que o conteúdo transborde */
+        }
+
+        /* Estilo para o card flutuante do mapa */
+        .floating-map-card {
+            position: fixed;
+            bottom: 20px;
+            right: -500px;
+            /* Começa fora da tela */
+            width: 400px;
+            /* Largura do card */
+            height: 500px;
+            /* Altura do card */
+            background: rgba(255, 255, 255, 0.9);
+            /* Fundo com transparência */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: right 0.5s ease;
+            /* Animação para mostrar o card */
+            z-index: 1000;
+        }
+
+        .floating-map-card.show {
+            right: 20px;
+            /* Move para a tela */
+        }
+
+        .floating-map-card .map-container {
+            width: 100%;
+            height: 400px;
+            /* Ajuste para a altura dentro do card */
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para o botão de fechar o mapa */
+        .close-map-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 768px) {
+            .filter-button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .card-item {
+                width: 200px;
+                /* Adjust card width for smaller screens */
+                height: 350px;
+                /* Adjust card height for smaller screens */
+            }
+
+            .user-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .container-swipe {
+                margin-right: 0;
+            }
+
+            .floating-map-card {
+                width: 90%;
+                height: auto;
+                max-height: 80vh;
+                left: 5%;
+                right: auto;
+
+            }
+
+            .floating-map-card .map-container {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <nav>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fixed-top">
@@ -342,7 +390,8 @@ header {
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="listvols.html" class="nav-link">Helpers</a></li>
-            <li class="nav-item"><a href="listbens.html" class="nav-link">Helpees</a></li>
+            <li class="nav-item"><a href="listbens.html" class="nav-link" style="color: rgb(0, 30, 50);">Helpees</a>
+            </li>
             <li class="nav-item"><a href="../services.html" class="nav-link">Services</a></li>
             <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
         </ul>
@@ -368,22 +417,22 @@ header {
             <div class="swiper-button-next"></div>
         </div>
     </div>
-        <div class="floating-map-card" id="floating-map-card">
-         <button class="close-map-button" onclick="closeMap()">×</button>
-         <div id="map" class="map-container"></div>
+    <div class="floating-map-card" id="floating-map-card">
+        <button class="close-map-button" onclick="closeMap()">×</button>
+        <div id="map" class="map-container"></div>
     </div>
     <script>
         let allBens = [];
         const cardsWrapper = document.getElementById("cards");
         let swiper;
         let currentMapId = null;
-          const serviceImages = {
+        const serviceImages = {
             "Cooking": "servicesImages/closecooking.jpg",
             "Maintenance": "servicesImages/closemaintenance.jpg",
             "Transport": "servicesImages/transport.jpg",
             "Shopping help": "servicesImages/shopping-cart.jpg",
             "Caring": "servicesImages/closecaring.jpg"
-            
+
         };
 
         window.onload = function () {
@@ -397,7 +446,7 @@ header {
             });
         }
 
-         function getServiceImage(serviceType) {
+        function getServiceImage(serviceType) {
             return serviceImages[serviceType] || serviceImages.default;
         }
 
@@ -415,12 +464,12 @@ header {
                 });
         }
 
-         function populateTable(bens) {
+        function populateTable(bens) {
             const cards = document.getElementById("cards");
             cards.innerHTML = ""; // Limpa os cards antes de adicionar novos
             bens.forEach((ben) => {
                 // Cria o HTML para cada item da lista de bens e adiciona o `data-ben-id` com o `ben.id`
-                 const imagePath = getServiceImage(ben.services);
+                const imagePath = getServiceImage(ben.services);
                 const cardHTML = `
                     <div class="card-item swiper-slide" data-ben-id="${ben.id}">
                         <img src="${imagePath}" alt="User Image" class="user-image">
@@ -442,9 +491,9 @@ header {
                     const cardItem = event.target.closest('.card-item');
                     const benId = cardItem.dataset.benId;
                     const ben = allBens.find(b => b.id == benId);
-                     if (ben) {
+                    if (ben) {
                         showMap(ben);
-                     }
+                    }
                 }
                 if (event.target && event.target.classList.contains("contact-button")) {
                     const cardItem = event.target.closest(".card-item");
@@ -504,8 +553,8 @@ header {
         }
 
         async function showMap(ben) {
-                const floatingMapCard = document.getElementById('floating-map-card');
-                floatingMapCard.classList.add('show');
+            const floatingMapCard = document.getElementById('floating-map-card');
+            floatingMapCard.classList.add('show');
 
             try {
                 const maps = await loadGoogleMapsAPI();
@@ -533,7 +582,7 @@ header {
                         center: { lat: latitude, lng: longitude },
                         zoom: 15,
                     });
-                     new maps.Marker({
+                    new maps.Marker({
                         position: { lat: latitude, lng: longitude },
                         map: map,
                     });
@@ -570,14 +619,15 @@ header {
                 }
             }
         }
-          function closeMap() {
+        function closeMap() {
             const floatingMapCard = document.getElementById('floating-map-card');
-             floatingMapCard.classList.remove('show');
+            floatingMapCard.classList.remove('show');
         }
 
-          function showContactInfo(ben) {
+        function showContactInfo(ben) {
             alert(`Name: ${ben.firstName} ${ben.lastName}\nPhone: ${ben.phone}\nAddress: ${ben.address}\nEmail: ${ben.email}`);
         }
     </script>
 </body>
+
 </html>

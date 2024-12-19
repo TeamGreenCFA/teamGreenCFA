@@ -40,7 +40,7 @@ public class VolController {
     public void setVolToVolDto(VolToVolDto volToVolDto) {
         this.volToVolDto = volToVolDto;
     }
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public ResponseEntity<List<VolDto>> listVols() {
 
@@ -51,7 +51,8 @@ public class VolController {
         return new ResponseEntity<>(VolDtos, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://127.0.0.1:5501")
+
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public ResponseEntity<VolDto> showVol(@PathVariable Integer id) {
 
@@ -64,7 +65,7 @@ public class VolController {
         return new ResponseEntity<>(volToVolDto.convert(volModel), HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public ResponseEntity<?> addVol(@Valid @RequestBody VolDto volDto, BindingResult bindingResult, UriComponentsBuilder uriComponentsBuilder) {
 
@@ -83,7 +84,7 @@ public class VolController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @RequestMapping(method = RequestMethod.PUT, path = "/{id}")
     public ResponseEntity<VolDto> editVol(@Valid @RequestBody VolDto volDto, BindingResult bindingResult, @PathVariable Integer id) {
 
@@ -101,7 +102,7 @@ public class VolController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @RequestMapping(method = RequestMethod.DELETE, path = "/{id}")
     public ResponseEntity<VolDto> deleteVol(@PathVariable Integer id) {
 
