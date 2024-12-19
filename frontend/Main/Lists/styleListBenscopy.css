@@ -1,0 +1,253 @@
+/* Reset de margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(houseplants.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  padding-top: 20px;
+  /* Reduzido para menos espaço no topo */
+}
+
+nav {
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+  padding: 10px;
+}
+
+/* Estilo para o cabeçalho */
+header {
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.nav-pills {
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Personalizando as cores dos links da nav */
+.nav-pills .nav-link {
+  top: 10px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o contêiner dos botões */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  /* Espaçamento entre os botões */
+}
+
+.filter-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  color: #030728;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* Estilo do contêiner de deslize */
+.container-swipe {
+  width: 100%;
+  /* Ajuste a largura para 100% para garantir que se ajuste ao tamanho da tela */
+  max-width: 1200px;
+  /* Limite de largura para que não ocupe a tela inteira em telas grandes */
+  align-items: center;
+  margin-top: 10px;
+  /* Subir o container mais para cima */
+  margin-bottom: 10px;
+  /* Espaçamento inferior para evitar que o conteúdo fique muito perto do fim */
+  overflow: visible;
+  /* Evita que os cards fiquem cortados */
+  position: relative;
+  /* Ajusta a posição para que o top e outros valores funcionem bem */
+}
+
+/* Estilo para os cards do swiper */
+.slider-wrapper {
+  display: flex;
+  /* Exibe os cards na horizontal */
+  gap: 15px;
+  /* Espaçamento entre os cards */
+  max-width: 100%;
+  /* Limita a largura máxima */
+  margin: 0 70px 100px;
+  color: #fff;
+  margin-top: 0;
+  /* Ajuste para garantir que o conteúdo não fique cortado */
+  transition: 0.2s ease;
+  justify-content: flex-start;
+  /* Alinha os cards à esquerda */
+  overflow: hidden;
+}
+
+/* Estilo das card-items */
+.card-list .card-item {
+  width: 300px;
+  /* Largura fixa para os cards */
+  height: 450px;
+  /* Altura fixa para garantir o layout */
+  border-radius: 3%;
+  margin-bottom: 40px;
+  /* Espaço entre os cards */
+  border: 2px solid #fff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* Distribui o conteúdo de forma uniforme */
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+  /* Evita que o conteúdo transborde */
+}
+
+.card-list {}
+
+/* Estilo para as imagens de usuário */
+.user-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #fff;
+  padding: 4px;
+}
+
+/* Estilo das informações (nome do serviço, usuário e descrição) */
+.service {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.user-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos botões */
+.message-button,
+.contact-button {
+  width: 48%;
+  padding: 10px 0;
+  font-size: 16px;
+  text-align: center;
+  color: #030728;
+  border-radius: 0;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+  margin: 0; /* Remove margins */
+}
+
+/* Efeito hover no botão */
+.message-button:hover,
+.contact-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* Estilo da navegação do swiper */
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
+
+/* Personalização da página do swiper */
+.slider-wrapper .swiper-pagination-bullet {
+  background: #fff;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet {
+  top: 100px;
+}
+.map-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+.button-container-card {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+   margin-top: 10px;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Take the full width of its parent */
+}
+
+.map-card-item {
+  width: 300px;
+  /* Largura fixa para os cards */
+  height: auto;
+  /* Altura fixa para garantir o layout */
+  border-radius: 3%;
+  margin-bottom: 40px;
+  /* Espaço entre os cards */
+  border: 2px solid #fff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* Distribui o conteúdo de forma uniforme */
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+  /* Evita que o conteúdo transborde */
+}
