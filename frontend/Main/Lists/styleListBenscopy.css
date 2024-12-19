@@ -10,13 +10,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 250px;
   background-image: url(houseplants.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: top center;
-  padding-top: 20px;
+  padding-top: 150px;
+  height: 100%;
   /* Reduzido para menos espaço no topo */
 }
 
@@ -84,97 +85,81 @@ header {
 /* Estilo do contêiner de deslize */
 .container-swipe {
   width: 100%;
-  /* Ajuste a largura para 100% para garantir que se ajuste ao tamanho da tela */
   max-width: 1200px;
-  /* Limite de largura para que não ocupe a tela inteira em telas grandes */
   align-items: center;
   margin-top: 10px;
-  /* Subir o container mais para cima */
   margin-bottom: 10px;
-  /* Espaçamento inferior para evitar que o conteúdo fique muito perto do fim */
-  overflow: visible;
-  /* Evita que os cards fiquem cortados */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o contêiner */
   position: relative;
-  /* Ajusta a posição para que o top e outros valores funcionem bem */
+  display: flex;
+   align-items: center;
 }
 
-/* Estilo para os cards do swiper */
+/* Estilo para o wrapper dos cards (lista) */
 .slider-wrapper {
-  display: flex;
-  /* Exibe os cards na horizontal */
-  gap: 15px;
-  /* Espaçamento entre os cards */
-  max-width: 100%;
-  /* Limita a largura máxima */
-  margin: 0 70px 100px;
-  color: #fff;
-  margin-top: 0;
-  /* Ajuste para garantir que o conteúdo não fique cortado */
-  transition: 0.2s ease;
-  justify-content: flex-start;
-  /* Alinha os cards à esquerda */
-  overflow: hidden;
+display: flex;
+transition: transform 0.5s ease; /* Adicione a transição aqui */
+color: #fff;
+margin-top: 0;
+overflow: visible;
+justify-content: flex-start;
 }
+
 
 /* Estilo das card-items */
-.card-list .card-item {
-  width: 300px;
-  /* Largura fixa para os cards */
-  height: 450px;
-  /* Altura fixa para garantir o layout */
+.card-list .card-item, .card-item {
+  width: 250px; /* Largura reduzida */
+  height: 400px; /* Altura reduzida */
   border-radius: 3%;
   margin-bottom: 40px;
-  /* Espaço entre os cards */
+  margin-right: 15px; /* Espaçamento entre os cards */
   border: 2px solid #fff;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  /* Distribui o conteúdo de forma uniforme */
   padding: 20px;
   border-radius: 10px;
   backdrop-filter: blur(30px);
   background: rgba(255, 255, 255, 0.2);
   text-align: center;
   box-sizing: border-box;
-  /* Evita que o conteúdo transborde */
+   flex-shrink: 0; /* Evita que os cards encolham */
 }
-
-.card-list {}
 
 /* Estilo para as imagens de usuário */
 .user-image {
-  width: 150px;
-  height: 150px;
+  width: 120px; /* Imagem menor */
+  height: 120px; /* Imagem menor */
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Espaçamento ajustado */
   border: 3px solid #fff;
   padding: 4px;
 }
 
 /* Estilo das informações (nome do serviço, usuário e descrição) */
 .service {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 24px; /* Fonte menor */
+  margin-bottom: 8px; /* Espaçamento ajustado */
 }
 
 .user-name {
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 18px; /* Fonte menor */
+  margin-bottom: 8px; /* Espaçamento ajustado */
 }
 
 .description {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 16px; /* Fonte menor */
+  margin-bottom: 15px; /* Espaçamento ajustado */
 }
 
 /* Estilo dos botões */
 .message-button,
 .contact-button {
   width: 48%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 8px 0; /* Espaçamento ajustado */
+  font-size: 14px; /* Fonte menor */
   text-align: center;
   color: #030728;
   border-radius: 0;
@@ -193,23 +178,32 @@ header {
   color: #fff;
 }
 
-/* Estilo da navegação do swiper */
-.swiper-button-prev,
-.swiper-button-next {
-  color: white !important;
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 1;
+    transition: 0.3s ease;
 }
 
-/* Personalização da página do swiper */
-.slider-wrapper .swiper-pagination-bullet {
-  background: #fff;
-  height: 13px;
-  width: 13px;
-  opacity: 0.5;
+.nav-button:hover {
+  color: rgba(255, 255, 255, 0.5);
+
 }
 
-.swiper-pagination-bullet {
-  top: 100px;
+.prev-button {
+  left: 10px;
 }
+
+.next-button {
+  right: 10px;
+}
+
 .map-container {
   width: 100%;
   height: 300px;
@@ -217,21 +211,21 @@ header {
   border: 1px solid #ccc;
 }
 .button-container-card {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-   margin-top: 10px;
+display: flex;
+width: 100%;
+justify-content: space-around;
+ margin-top: 10px;
 }
 .card-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%; /* Take the full width of its parent */
+display: flex;
+flex-direction: column;
+width: 25%; /* Take the full width of its parent */
 }
 
 .map-card-item {
-  width: 300px;
+  width: 250px;
   /* Largura fixa para os cards */
-  height: auto;
+  height: 250px;
   /* Altura fixa para garantir o layout */
   border-radius: 3%;
   margin-bottom: 40px;
