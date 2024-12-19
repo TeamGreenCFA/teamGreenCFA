@@ -16,7 +16,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: top center;
-  padding-top: 100px; /* Espaço extra no topo para o conteúdo não ser cortado */
+  padding-top: 20px; /* Reduzido para menos espaço no topo */
 }
 
 nav {
@@ -46,12 +46,13 @@ header {
 
 /* Estilo do contêiner de deslize */
 .container-swipe {
-  width: 1200px;
+  width: 100%; /* Ajuste a largura para 100% para garantir que se ajuste ao tamanho da tela */
+  max-width: 1200px; /* Limite de largura para que não ocupe a tela inteira em telas grandes */
   align-items: center;
-  right: 30px;
-  top: 100px;
-  height: 100%; /* Garantir que o swiper ocupe toda a altura */
+  margin-top: 10px; /* Subir o container mais para cima */
+  margin-bottom: 10px; /* Espaçamento inferior para evitar que o conteúdo fique muito perto do fim */
   overflow: visible; /* Evita que os cards fiquem cortados */
+  position: relative; /* Ajusta a posição para que o top e outros valores funcionem bem */
 }
 
 /* Estilo para os cards do swiper */
@@ -87,9 +88,6 @@ header {
   box-sizing: border-box; /* Evita que o conteúdo transborde */
 }
 
-.card-list{
-
-}
 /* Estilo para as imagens de usuário */
 .user-image {
   width: 150px;
@@ -148,4 +146,8 @@ header {
   height: 13px;
   width: 13px;
   opacity: 0.5;
+}
+
+.swiper-pagination-bullet {
+  top: 200px;
 }
