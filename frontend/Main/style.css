@@ -18,7 +18,7 @@ body {
     gap: 80px;
     /* Add space between buttons */
     position: absolute;
-    top: 700px;
+    top: 800px;
     /* You can adjust this value to position the content in percentage */
     left: 50%;
     transform: translate(-50%, -50%);
@@ -39,7 +39,7 @@ button {
     font-size: 26px !important;
 }
 
-.content p {
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@ button {
     position: absolute;
     font-size: 24px;
     color: white;
-    top: 300px;
+    top: 400px;
     /* Adjust this value to position the content in percentage */
     left: 50%;
     /* Centers horizontally */

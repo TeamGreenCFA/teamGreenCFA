@@ -2,10 +2,11 @@ package team.green.cfo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 import team.green.cfo.daos.jpa.JpaVolDao;
 import team.green.cfo.models.VolModel;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service

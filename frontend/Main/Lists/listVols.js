@@ -55,7 +55,7 @@ function populateTable(vols) {
                 <img src="servicesImages/shopping-cart.jpg" alt="User Image" class="user-image">
                 <h3 class="service">${vol.services}</h3>
                 <p class="user-name">${vol.firstName + " " + vol.lastName}</p>
-                <p class="description">${vol.description}</p>
+                <p class="description">${vol.descriptions}</p>
                 <button class="message-button">Message</button>
             </div>
         `;
@@ -74,7 +74,7 @@ function populateTable(vols) {
 
             if (vol) {
                 // Exibe o alerta com as informações do voluntário
-                alert(`${vol.firstName + " " + vol.lastName}:\n\nPhone Number: ${vol.phone}\nAddress: ${vol.address}\nDescription: ${vol.description}`);
+                alert(`${vol.firstName + " " + vol.lastName}:\n\nPhone Number: ${vol.phone}\nAddress: ${vol.address}\nEmail: ${vol.email}`);
             }
         }
     });
