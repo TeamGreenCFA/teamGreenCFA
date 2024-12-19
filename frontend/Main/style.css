@@ -1,10 +1,10 @@
 * {
-
     font-family: 'Gill Sans', sans-serif;
+    
 }
 
 body {
-    background-image: url(image4.jpg);
+    background-image: url(image5.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -15,10 +15,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 20px;
+    gap: 80px;
     /* Add space between buttons */
     position: absolute;
-    top: 650px;
+    top: 700px;
     /* You can adjust this value to position the content in percentage */
     left: 50%;
     transform: translate(-50%, -50%);
@@ -27,31 +27,30 @@ body {
 button {
     padding: 10px 20px;
     /* Adjust the button's size */
-    width: 250px;
-    height: auto;
+    width:300px;
+    height: 60px;
     border-radius: 50px;
     /* Round the corners of the button */
     border: none;
     /* Remove default border */
     background-color: #605678;
-    color: white;
+    color: rgb(223, 221, 187);
     cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
+    font-size: 26px !important;
 }
 
 .content p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 350px;
     text-align: center;
     max-width: 50%;
     /* Adjust the width percentage */
     padding: 20px;
     border-radius: 8px;
     position: absolute;
-    font-size: 20px;
+    font-size: 24px;
     color: white;
     top: 300px;
     /* Adjust this value to position the content in percentage */
@@ -68,12 +67,13 @@ header {
 }
 
 .nav-pills {
-    font-size: 20px;
+    font-size: 24px;
+    justify-content: center;
     align-items: center;
 }
 
 button:hover {
-    background-color: #7b82ca;
+    background-color: #4385a2;
     /* Darker background color on hover */
 }
 
@@ -94,22 +94,10 @@ a {
     /* Custom color for the nav links */
 }
 .container {
-    height: 200px;
-    padding-left: 200px;
-    padding-right: 20px;
+    height: 100px;
 }
 nav {
-    position: sticky;
+    top: 20px;
     z-index: 10; /* Ensure it stays on top of other elements */
-
-}
-
-header {
-    padding-left: 3%;
-    padding-right: 3%;
-}
-.row g-3{
-    display: flex;
-    position: absolute;
-    
+    padding: 10px; /* Adjust as needed */
 }
